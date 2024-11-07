@@ -10,12 +10,12 @@ export default function TodoList() {
   })
 
   return (
-    <div className="">
+    <div className="p-4 bg-gray-100 rounded-lg shadow-md">
       {isPending && <div className="text-blue-500">Loading...</div>}
       {error && <div className="text-red-500">Error: {error.message}</div>}
 
       {data && (
-        <div className="flex flex-row gap-2 flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
           {data.map((todo: TodoModel) => (
             <Todo key={todo.id} {...todo} />
           ))}
